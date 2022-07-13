@@ -80,16 +80,21 @@ class Conecta4 {
 
   GameCheckerColumsRows = (A) => {
     if (A[0] === A[1] && A[1] === A[2] && A[2] === A[3]) {
-      this.GameFinished();
-    } else if (A[1] === A[2] && A[2] === A[3] && A[3] === A[4]) {
-      this.GameFinished();
-    } else if (A[2] === A[3] && A[3] === A[4] && A[4] === A[5]) {
-      this.GameFinished();
-    } else if (A[3] === A[4] && A[4] === A[5] && A[5] === A[6]) {
-      this.GameFinished();
-    } else if (A[4] === A[5] && A[5] === A[6] && A[6] === A[7]) {
-      this.GameFinished();
+      return this.GameFinished();
     }
+    if (A[1] === A[2] && A[2] === A[3] && A[3] === A[4]) {
+      return this.GameFinished();
+    }
+    if (A[2] === A[3] && A[3] === A[4] && A[4] === A[5]) {
+      return this.GameFinished();
+    }
+    if (A[3] === A[4] && A[4] === A[5] && A[5] === A[6]) {
+      return this.GameFinished();
+    }
+    if (A[4] === A[5] && A[5] === A[6] && A[6] === A[7]) {
+      return this.GameFinished();
+    }
+    return "No one won wet";
   };
 
   GameCheckerDiagonals = (A) => {
