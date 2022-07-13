@@ -26,14 +26,14 @@ class Conecta4 {
     CirclesColumnFive,
     CirclesColumnSix,
     CirclesColumnSeven,
-    columnOne,
-    columnTwo,
-    columnThree,
-    columnFour,
-    columnFive,
-    columnSix,
-    columnSeven,
-    h1title
+    receivedColumnOne,
+    receivedColumnTwo,
+    receivedColumnThree,
+    receivedColumnFour,
+    receivedColumnFive,
+    receivedColumnSix,
+    receivedColumnSeven,
+    h1Title
   ) {
     this.ButtonPlay = ButtonPlay;
     this.ButtonPlayVSComp = ButtonPlayVSComp;
@@ -44,13 +44,13 @@ class Conecta4 {
     this.CirclesColumnFive = CirclesColumnFive;
     this.CirclesColumnSix = CirclesColumnSix;
     this.CirclesColumnSeven = CirclesColumnSeven;
-    this.columnOne = columnOne;
-    this.columnTwo = columnTwo;
-    this.columnThree = columnThree;
-    this.columnFour = columnFour;
-    this.columnFive = columnFive;
-    this.columnSix = columnSix;
-    this.columnSeven = columnSeven;
+    this.receivedColumnOne = receivedColumnOne;
+    this.receivedColumnTwo = receivedColumnTwo;
+    this.receivedColumnThree = receivedColumnThree;
+    this.receivedColumnFour = receivedColumnFour;
+    this.receivedColumnFive = receivedColumnFive;
+    this.receivedColumnSix = receivedColumnSix;
+    this.receivedColumnSeven = receivedColumnSeven;
     this.PositionColumnOne = 5;
     this.PositionColumnTwo = 5;
     this.PositionColumnThree = 5;
@@ -59,7 +59,7 @@ class Conecta4 {
     this.PositionColumnSix = 5;
     this.PositionColumnSeven = 5;
     this.PlayerTurn = 1;
-    this.h1title = h1title;
+    this.h1Title = h1Title;
     this.GameCheck = [
       // empty Arrays to avoid a Type Error in ArrayGameChecker.
       [],
@@ -106,13 +106,19 @@ class Conecta4 {
 
   GameFinished = () => {
     h1title.textContent = `Player ${this.PlayerTurn} WOOON!`;
-    this.columnOne.removeEventListener("click", this.ActionColumnOne);
-    this.columnTwo.removeEventListener("click", this.ActionColumnTwo);
-    this.columnThree.removeEventListener("click", this.ActionColumnThree);
-    this.columnFour.removeEventListener("click", this.ActionColumnFour);
-    this.columnFive.removeEventListener("click", this.ActionColumnFive);
-    this.columnSix.removeEventListener("click", this.ActionColumnSix);
-    this.columnSeven.removeEventListener("click", this.ActionColumnSeven);
+    this.receivedColumnOne.removeEventListener("click", this.ActionColumnOne);
+    this.receivedColumnTwo.removeEventListener("click", this.ActionColumnTwo);
+    this.receivedColumnThree.removeEventListener(
+      "click",
+      this.ActionColumnThree
+    );
+    this.receivedColumnFour.removeEventListener("click", this.ActionColumnFour);
+    this.receivedColumnFive.removeEventListener("click", this.ActionColumnFive);
+    this.receivedColumnSix.removeEventListener("click", this.ActionColumnSix);
+    this.receivedColumnSeven.removeEventListener(
+      "click",
+      this.ActionColumnSeven
+    );
   };
 
   ArrayGameChecker = (num, Positioncolumn) => {
@@ -159,13 +165,15 @@ class Conecta4 {
 
   ActionColums = (Positioncolumn, circlesColums, num) => {
     if (this.PlayerTurn === 1 && Positioncolumn >= 0) {
-      circlesColums[Positioncolumn].style.background =
+      const circleColor = circlesColums[Positioncolumn];
+      circleColor.style.background =
         "linear-gradient(rgb(3, 58, 3), 30%, rgb(19, 117, 25))";
       this.GameCheck[num][Positioncolumn] = "green";
       this.ArrayGameChecker(num, Positioncolumn);
       this.PlayerTurn = 2;
     } else if (this.PlayerTurn === 2 && Positioncolumn >= 0) {
-      circlesColums[Positioncolumn].style.background =
+      const circleColor = circlesColums[Positioncolumn];
+      circleColor.style.background =
         "linear-gradient(rgb(58, 6, 3), 30%, rgb(152, 22, 20)";
       this.GameCheck[num][Positioncolumn] = "red";
       this.ArrayGameChecker(num, Positioncolumn);
@@ -174,13 +182,13 @@ class Conecta4 {
   };
 
   ColumsClick = () => {
-    this.columnOne.addEventListener("click", this.ActionColumnOne);
-    this.columnTwo.addEventListener("click", this.ActionColumnTwo);
-    this.columnThree.addEventListener("click", this.ActionColumnThree);
-    this.columnFour.addEventListener("click", this.ActionColumnFour);
-    this.columnFive.addEventListener("click", this.ActionColumnFive);
-    this.columnSix.addEventListener("click", this.ActionColumnSix);
-    this.columnSeven.addEventListener("click", this.ActionColumnSeven);
+    this.receivedColumnOne.addEventListener("click", this.ActionColumnOne);
+    this.receivedColumnTwo.addEventListener("click", this.ActionColumnTwo);
+    this.receivedColumnThree.addEventListener("click", this.ActionColumnThree);
+    this.receivedColumnFour.addEventListener("click", this.ActionColumnFour);
+    this.receivedColumnFive.addEventListener("click", this.ActionColumnFive);
+    this.receivedColumnSix.addEventListener("click", this.ActionColumnSix);
+    this.receivedColumnSeven.addEventListener("click", this.ActionColumnSeven);
   };
 
   ActionColumnOne = () => {
@@ -227,7 +235,7 @@ class Conecta4 {
     this.PositionColumnSix = 5;
     this.PositionColumnSeven = 5;
     this.PlayerTurn = 1;
-    this.h1title = h1title;
+    this.h1Title = h1title;
     this.GameCheck = [
       // empty Arrays to avoid a Type Error in ArrayGameChecker.
       [],
@@ -251,31 +259,38 @@ class Conecta4 {
       this.ColumsClick();
       this.VariablesForNewGame();
       this.CirclesColumnOne.forEach((element) => {
-        element.style.background =
+        const colorChangedElement = element;
+        colorChangedElement.style.background =
           "linear-gradient(rgb(69, 69, 186), 30%, white)";
       });
       this.CirclesColumnTwo.forEach((element) => {
-        element.style.background =
+        const colorChangedElement = element;
+        colorChangedElement.style.background =
           "linear-gradient(rgb(69, 69, 186), 30%, white)";
       });
       this.CirclesColumnThree.forEach((element) => {
-        element.style.background =
+        const colorChangedElement = element;
+        colorChangedElement.style.background =
           "linear-gradient(rgb(69, 69, 186), 30%, white)";
       });
       this.CirclesColumnFour.forEach((element) => {
-        element.style.background =
+        const colorChangedElement = element;
+        colorChangedElement.style.background =
           "linear-gradient(rgb(69, 69, 186), 30%, white)";
       });
       this.CirclesColumnFive.forEach((element) => {
-        element.style.background =
+        const colorChangedElement = element;
+        colorChangedElement.style.background =
           "linear-gradient(rgb(69, 69, 186), 30%, white)";
       });
       this.CirclesColumnSix.forEach((element) => {
-        element.style.background =
+        const colorChangedElement = element;
+        colorChangedElement.style.background =
           "linear-gradient(rgb(69, 69, 186), 30%, white)";
       });
       this.CirclesColumnSeven.forEach((element) => {
-        element.style.background =
+        const colorChangedElement = element;
+        colorChangedElement.style.background =
           "linear-gradient(rgb(69, 69, 186), 30%, white)";
       });
       h1title.textContent = "Conecta 4. Started Game!";
@@ -284,13 +299,25 @@ class Conecta4 {
 
   PlayDifMode = () => {
     this.ButtonPlayVSComp.addEventListener("click", () => {
-      this.columnOne.removeEventListener("click", this.ActionColumnOne);
-      this.columnTwo.removeEventListener("click", this.ActionColumnTwo);
-      this.columnThree.removeEventListener("click", this.ActionColumnThree);
-      this.columnFour.removeEventListener("click", this.ActionColumnFour);
-      this.columnFive.removeEventListener("click", this.ActionColumnFive);
-      this.columnSix.removeEventListener("click", this.ActionColumnSix);
-      this.columnSeven.removeEventListener("click", this.ActionColumnSeven);
+      this.receivedColumnOne.removeEventListener("click", this.ActionColumnOne);
+      this.receivedColumnTwo.removeEventListener("click", this.ActionColumnTwo);
+      this.receivedColumnThree.removeEventListener(
+        "click",
+        this.ActionColumnThree
+      );
+      this.receivedColumnFour.removeEventListener(
+        "click",
+        this.ActionColumnFour
+      );
+      this.receivedColumnFive.removeEventListener(
+        "click",
+        this.ActionColumnFive
+      );
+      this.receivedColumnSix.removeEventListener("click", this.ActionColumnSix);
+      this.receivedColumnSeven.removeEventListener(
+        "click",
+        this.ActionColumnSeven
+      );
     });
   };
 }
