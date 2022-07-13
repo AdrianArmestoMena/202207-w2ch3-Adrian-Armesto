@@ -1,0 +1,184 @@
+body{
+    background-color: aliceblue;
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 60px;
+    color: rgb(22, 90, 227);
+    text-align: center;
+}
+
+#PASAPALABRA{
+    background-color: rgb(206, 200, 252);
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.RoscoContainer{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Rosco {
+    width:500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+}
+.Letras{
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    background-color: rgb(22, 90, 227);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    position: absolute;
+    top:calc(50% - 25px);
+    left:calc(50% - 25px);
+  
+}
+.Letras:nth-child(1){
+    transform: translateY(-250px);
+}
+.Letras:nth-child(2){
+    transform: rotate(13.3deg)translateY(-250px);
+}
+.Letras:nth-child(3){
+    transform: rotate(26.6deg)translateY(-250px);
+}
+.Letras:nth-child(4){
+    transform: rotate(39.9deg)translateY(-250px);
+}
+.Letras:nth-child(5){
+    transform: rotate(53.2deg)translateY(-250px);
+}
+.Letras:nth-child(6){
+    transform: rotate(66.5deg)translateY(-250px);
+}
+.Letras:nth-child(7){
+    transform: rotate(79.8deg)translateY(-250px);
+}
+.Letras:nth-child(8){
+    transform: rotate(93.1deg)translateY(-250px);
+}
+.Letras:nth-child(9){
+    transform: rotate(106.4deg)translateY(-250px);
+}
+.Letras:nth-child(10){
+    transform: rotate(119.7deg)translateY(-250px);
+}
+.Letras:nth-child(11){
+    transform: rotate(133deg)translateY(-250px);
+}
+.Letras:nth-child(12){
+    transform: rotate(146.3deg)translateY(-250px);
+}
+.Letras:nth-child(13){
+    transform: rotate(159.6deg)translateY(-250px);
+}
+.Letras:nth-child(14){
+    transform: rotate(172.9deg)translateY(-250px);
+}
+.Letras:nth-child(15){
+    transform: rotate(186.2deg)translateY(-250px);
+}
+.Letras:nth-child(16){
+    transform: rotate(199.5deg)translateY(-250px);
+}
+.Letras:nth-child(17){
+    transform: rotate(212.8deg)translateY(-250px);
+}
+.Letras:nth-child(18){
+    transform: rotate(226.1deg)translateY(-250px);
+}
+.Letras:nth-child(19){
+    transform: rotate(239.4deg)translateY(-250px);
+}
+.Letras:nth-child(20){
+    transform: rotate(252.7deg)translateY(-250px);
+}
+.Letras:nth-child(21){
+    transform: rotate(266deg)translateY(-250px);
+}
+.Letras:nth-child(22){
+    transform: rotate(279.3deg)translateY(-250px);
+}
+.Letras:nth-child(23){
+    transform: rotate(292.6deg)translateY(-250px);
+}
+.Letras:nth-child(24){
+    transform: rotate(305.9deg)translateY(-250px);
+}
+.Letras:nth-child(25){
+    transform: rotate(319.2deg)translateY(-250px);
+}
+.Letras:nth-child(26){
+    transform: rotate(332.5deg)translateY(-250px);
+}
+.Letras:nth-child(27){
+    transform: rotate(345.8deg)translateY(-250px);
+}
+#Explain{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#Counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#textExplain{
+    width: 500px;
+    height:250px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: rgb(22, 90, 227);;
+} 
+.textCounter{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: rgb(22, 90, 227);
+}
+#Segundos{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: rgb(217, 29, 51);
+}
+#BotonJugar{
+    width: 70px;
+    height: 30px;
+    background-color: rgb(22, 90, 227);
+    color: white;
+}
+#BotonJugar:active{
+    background-color: rgb(15, 49, 118);
+}
+#WritenAnswer{
+    width: 200px;
+    height: 30px;
+    border: solid 2px rgb(73, 73, 138);
+}
+
+#BotonAnswer{
+    width: 70px;
+    height: 30px;
+    background-color: rgb(22, 90, 227);
+    color: white;
+}
+
