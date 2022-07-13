@@ -124,20 +124,19 @@ const MAIN = () => {
   };
 
   let Cantarlinea = () => {
-    const CantarLinea = [];
     const linea0 = [];
     const linea1 = [];
     const linea2 = [];
     carton.forEach((linea) => {
-      if (linea == carton[0]) {
+      if (linea === carton[0]) {
         Object.entries(linea).forEach((par) => {
           linea0.push(par[1]);
         });
-      } else if (linea == carton[1]) {
+      } else if (linea === carton[1]) {
         Object.entries(linea).forEach((par) => {
           linea1.push(par[1]);
         });
-      } else if (linea == carton[2]) {
+      } else if (linea === carton[2]) {
         Object.entries(linea).forEach((par) => {
           linea2.push(par[1]);
         });
@@ -189,6 +188,7 @@ const MAIN = () => {
     } else {
       OtroCarton();
     }
+    return "used";
   };
 
   OtroCarton();
