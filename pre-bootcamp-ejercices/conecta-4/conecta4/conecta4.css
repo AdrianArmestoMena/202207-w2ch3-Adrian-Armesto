@@ -1,0 +1,50 @@
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-image: url(parquet.png);
+}
+button{
+    background-color: blue;
+    color: white;
+    margin: 10px;
+}
+button:active{
+    background-color: rgb(15, 49, 118);
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blue;
+    font-size: 30px;
+    
+}
+.table{
+    border-radius: 2%;
+    border: 2px solid rgb(3, 3, 123); ;
+    background-color: rgb(37, 37, 221);
+    width: 700px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+.column{
+    flex-direction: column;
+    width: 100px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+.circle{
+    margin: 2px;
+    width: 95px;
+    height: 95px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    background: linear-gradient(rgb(69, 69, 186), 30%, white);
+    background-color: none;
+    border-radius: 50%;
+}
+
+
