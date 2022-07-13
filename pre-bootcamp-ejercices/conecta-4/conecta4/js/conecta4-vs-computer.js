@@ -1,3 +1,20 @@
+const ButtonTwoPlayers = document.getElementById("ButtonPlayer");
+const ButtonVsMachine = document.getElementById("ButtonVsMachine");
+const h1title = document.getElementById("title");
+const CirclesOne = Array.from(document.querySelectorAll(".circlesOne"));
+const CirclesTwo = Array.from(document.querySelectorAll(".circlesTwo"));
+const Circlesthree = Array.from(document.querySelectorAll(".circlesThree"));
+const CirclesFour = Array.from(document.querySelectorAll(".circlesFour"));
+const CirclesFive = Array.from(document.querySelectorAll(".circlesFive"));
+const CirclesSix = Array.from(document.querySelectorAll(".circlesSix"));
+const CirclesSeven = Array.from(document.querySelectorAll(".circlesSeven"));
+const columnOne = document.getElementById("columnOne");
+const columnTwo = document.getElementById("columnTwo");
+const columnThree = document.getElementById("columnThree");
+const columnFour = document.getElementById("columnFour");
+const columnFive = document.getElementById("columnFive");
+const columnSix = document.getElementById("columnSix");
+const columnSeven = document.getElementById("columnSeven");
 class Conecta4vsMachine {
   constructor(
     ButtonPlay,
@@ -315,4 +332,25 @@ class Conecta4vsMachine {
   };
 }
 
-export default Conecta4vsMachine;
+const GameVSComputer = new Conecta4vsMachine(
+  ButtonTwoPlayers,
+  ButtonVsMachine,
+  CirclesOne,
+  CirclesTwo,
+  Circlesthree,
+  CirclesFour,
+  CirclesFive,
+  CirclesSix,
+  CirclesSeven,
+  columnOne,
+  columnTwo,
+  columnThree,
+  columnFour,
+  columnFive,
+  columnSix,
+  columnSeven,
+  h1title
+);
+
+GameVSComputer.Play();
+GameVSComputer.PlayDifMode();
