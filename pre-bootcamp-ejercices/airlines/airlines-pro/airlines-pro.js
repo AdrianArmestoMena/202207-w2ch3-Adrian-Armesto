@@ -22,9 +22,9 @@ const flights = [
   { id: 10, to: "Tel-Aviv", from: "Madrid", cost: 150, scale: false },
 ];
 
-const arrayDeIDs = (flights) => {
+const arrayDeIDs = (flightsParameter) => {
   const ID = [];
-  flights.forEach((flight) => {
+  flightsParameter.forEach((flight) => {
     ID.push(flight.id);
   });
   return ID;
@@ -44,8 +44,8 @@ const welcomeUserNAme = () => {
 };
 welcomeUserNAme();
 
-const PrintFlights = (flights) => {
-  flights.forEach((flight) => {
+const PrintFlights = (flightsParameter) => {
+  flightsParameter.forEach((flight) => {
     if (flight.scale === false) {
       console.log(
         `ID: ${flight.id} El vuelo con origen: ${flight.from} y destino: ${flight.to} tiene un coste de ${flight.cost} y no realiza ninguna escala.`
@@ -71,21 +71,23 @@ console.log(
   ).toFixed(2)}`
 );
 
-const printFlightsWithScale = (flights) => {
-  const FlightsWithScale = flights.filter((flights) => flights.scale === true);
+const printFlightsWithScale = (flightsParameter) => {
+  const FlightsWithScale = flightsParameter.filter(
+    (flight) => flight.scale === true
+  );
   return FlightsWithScale.length;
 };
 console.log(`Salen ${printFlightsWithScale(flights)} vuelos que hacen escala`);
 
-const UltimosCincoVuelos = (flights) => {
-  const numeroDeVuelosMenosCinco = flights.length - 5;
-  const ultimosCincoVuelos = flights.filter(
-    (flights) => flights.id >= numeroDeVuelosMenosCinco
+const UltimosCincoVuelos = (flightsParameter) => {
+  const numeroDeVuelosMenosCinco = flightsParameter.length - 5;
+  const ultimosCincoVuelos = flightsParameter.filter(
+    (flight) => flight.id >= numeroDeVuelosMenosCinco
   );
   return ultimosCincoVuelos;
 };
-const mostrarDestinoUltimosCincoVuelos = (flights) => {
-  flights.forEach((flight) => {
+const mostrarDestinoUltimosCincoVuelos = (flightsParameter) => {
+  flightsParameter.forEach((flight) => {
     console.log(`El destino del vuelo es ${flight.to}`);
   });
 };
@@ -189,7 +191,7 @@ let actionDeleteAdmin = () => {
   const FlghtsAfterDelete = () => {
     flights.forEach((flight) => {
       IDlist.forEach((ID) => {
-        if (flight.id == +ID) {
+        if (flight.id === +ID) {
           flights.splice(flights.indexOf(flight), 1);
         }
       });
@@ -205,7 +207,7 @@ const usersActions = () => {
     precio = prompt(
       "Write a price in numbers to see the flights with that price or chepers"
     );
-  } while (precio === null || precio === "" || +precio === NaN);
+  } while (precio === null || precio === "" || Number.isNaN(+precio));
   console.log(+precio);
   const flightsPriceUsers = flights.filter((flight) => flight.cost < +precio);
   PrintFlights(flightsPriceUsers);
