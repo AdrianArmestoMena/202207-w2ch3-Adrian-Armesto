@@ -346,6 +346,26 @@ const Game = new Conecta4(
   columnSeven,
   h1title
 );
-
+const test = Game.GameCheckerColumsRows();
 Game.Play();
 Game.PlayDifMode();
+
+export const GameCheckerColumsRows = (A) => {
+  if (A[0] === A[1] && A[1] === A[2] && A[2] === A[3]) {
+    return this.GameFinished();
+  }
+  if (A[1] === A[2] && A[2] === A[3] && A[3] === A[4]) {
+    return this.GameFinished();
+  }
+  if (A[2] === A[3] && A[3] === A[4] && A[4] === A[5]) {
+    return this.GameFinished();
+  }
+  if (A[3] === A[4] && A[4] === A[5] && A[5] === A[6]) {
+    return this.GameFinished();
+  }
+  if (A[4] === A[5] && A[5] === A[6] && A[6] === A[7]) {
+    return this.GameFinished();
+  }
+  return "No one won wet";
+};
+export default GameCheckerColumsRows;
